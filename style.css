@@ -1,0 +1,105 @@
+/* ===== Basic, clean academic style ===== */
+:root {
+  --text: #222;
+  --muted: #666;
+  --accent: #00356b;   /* change to any color you like */
+  --bg: #fff;
+  --line: #e5e5e5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ----- Top navigation bar ----- */
+header {
+  border-bottom: 1px solid var(--line);
+}
+nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+nav .site-name {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--text);
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 22px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+nav ul a { color: var(--muted); }
+nav ul a.active, nav ul a:hover { color: var(--accent); }
+
+/* ----- Main content ----- */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+h1 { font-size: 34px; margin: 0 0 24px; }
+h2 { font-size: 24px; margin: 36px 0 12px; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+
+/* Home page: photo on the left, text on the right */
+.intro {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+.intro .photo {
+  flex: 0 0 220px;
+  text-align: center;
+}
+.intro .photo img {
+  width: 220px;
+  border-radius: 6px;
+}
+.links {
+  margin-top: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+.links a { margin: 0 6px; }
+
+/* Stack photo above text on phones */
+@media (max-width: 650px) {
+  .intro { flex-direction: column; align-items: center; }
+  .intro .photo { flex-basis: auto; }
+}
+
+/* Research / teaching entries */
+.entry { margin-bottom: 22px; }
+.entry .title { font-weight: bold; }
+.entry .details { color: var(--muted); font-size: 16px; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 20px;
+  border-top: 1px solid var(--line);
+}
