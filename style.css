@@ -47,14 +47,21 @@ nav ul {
   margin: 0 0 0 auto;   /* keep menu on the right, even without the name */
   padding: 0;
   display: flex;
-  gap: 22px;
+  gap: 6px;
   font-family: var(--sans);
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-nav ul a { color: var(--muted); }
-nav ul a.active, nav ul a:hover { color: var(--accent); text-decoration: none; }
+nav ul a {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 4px;
+  color: var(--muted);
+}
+nav ul a:hover { color: var(--accent); text-decoration: none; }
+/* Current page: filled box */
+nav ul a.active, nav ul a.active:hover { background: var(--accent); color: #fff; }
 
 /* ----- Main content ----- */
 main {
@@ -63,10 +70,10 @@ main {
   padding: 40px 20px 60px;
 }
 
-h1, h2 { color: var(--text); line-height: 1.25; }
+h1, h2 { color: var(--text); font-weight: normal; line-height: 1.25; }
 h1 { font-size: 34px; margin: 0 0 28px; }
 h2 { font-size: 24px; margin: 40px 0 16px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
-h1 + h2 { margin-top: 0; }
+main > h2:first-child, h1 + h2 { margin-top: 0; }
 
 /* Home page: photo on the left, text on the right, tops aligned */
 .intro {
@@ -105,7 +112,7 @@ h1 + h2 { margin-top: 0; }
 
 /* ----- Research / teaching entries ----- */
 .entry { margin-bottom: 24px; }
-.entry .title { font-weight: bold; }
+.entry .title { font-weight: normal; }
 .entry .details { color: var(--muted); font-size: 16px; }
 
 /* [pdf] [abstract] links; the abstract drops down when [abstract] is clicked */
