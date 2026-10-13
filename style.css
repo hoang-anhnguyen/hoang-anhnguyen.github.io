@@ -104,6 +104,17 @@ main > h2:first-child, h1 + h2 { margin-top: 0; }
 }
 .links a { margin: 0 6px; }
 
+/* "Copied" note shown after clicking an email link */
+.copied {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 12px;
+}
+
 /* Stack photo above text on phones */
 @media (max-width: 650px) {
   .intro { flex-direction: column; align-items: center; gap: 28px; }
