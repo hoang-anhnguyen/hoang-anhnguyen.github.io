@@ -108,19 +108,24 @@ h1 + h2 { margin-top: 0; }
 .entry .title { font-weight: bold; }
 .entry .details { color: var(--muted); font-size: 16px; }
 
-/* [pdf] [abstract] links, with the abstract as a drop-down */
-.paper-links { margin-top: 4px; }
-.paper-links summary {
-  display: inline-flex;
+/* [pdf] [abstract] links; the abstract drops down when [abstract] is clicked */
+.paper-links {
+  margin-top: 4px;
+  display: flex;
   gap: 14px;
-  list-style: none;
   font-family: var(--sans);
   font-size: 15px;
 }
-.paper-links summary::-webkit-details-marker { display: none; }
-.paper-links .toggle { color: var(--accent); cursor: pointer; user-select: none; }
+.paper-links .toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+}
 .paper-links .toggle:hover { text-decoration: underline; }
-.paper-links p {
+.entry .abstract {
   margin: 10px 0 0;
   padding-left: 14px;
   border-left: 3px solid var(--line);
